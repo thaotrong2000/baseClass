@@ -27,9 +27,17 @@ namespace MISA.Core.Service
             return _baseRepository.GetById(entityId);
         }
 
+
         public int Insert(MISAEntity entity)
         {
+            // Validate dữ liệu
+            Validate(entity);
             return _baseRepository.Insert(entity);
+        }
+
+        protected virtual void Validate(MISAEntity entity)
+        {
+
         }
 
         public int Update(MISAEntity entity)

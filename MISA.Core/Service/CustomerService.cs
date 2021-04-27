@@ -18,6 +18,25 @@ namespace MISA.Core.Service
             _customerRepository = customerRepository;
         }
 
+        protected override void Validate(Customer entity)
+        {
+            if (entity is Customer)
+            {
+                var customer = entity as Customer;
+
+                //Validate dữ liệu
+                // Check các thông tin bắt buộc nhập
+                // CustomerExeption.CheckCustomerCodeEmpty(customer.CustomerCode)
+
+                // Check trùng mã  
+                var isExist = _customerRepository.CheckCustomerCodeExist(customer.CustomerCode);
+                if (isExist == true)
+                {
+                    throw new Exception("Mã khách hàng đã tồn tại trên hệ thống");
+                }
+            }
+        }
+
 
         //public int Delete(Guid customerId)
         //{

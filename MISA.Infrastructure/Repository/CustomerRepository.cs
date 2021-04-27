@@ -18,13 +18,7 @@ namespace MISA.Infrastructure.Repository
 
         public bool CheckCustomerCodeExist(string customerCode)
         {
-            using (dbConnection = new MySqlConnection(connectString))
-            {
-                DynamicParameters dynamicParameters = new DynamicParameters();
-                dynamicParameters.Add("@m_CustomerCode", customerCode);
-                var customerCodeExist = dbConnection.QueryFirstOrDefault<bool>("Proc_CheckCustomerCodeExists", param: dynamicParameters, commandType: CommandType.StoredProcedure);
-                return customerCodeExist;
-            }
+            return true;
 
         }
 

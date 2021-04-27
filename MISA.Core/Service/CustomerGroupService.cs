@@ -9,38 +9,38 @@ using System.Threading.Tasks;
 
 namespace MISA.Core.Service
 {
-    public class CustomerGroupService : ICustomerGroupService
+    public class CustomerGroupService : BaseService<CustomerGroup>, ICustomerGroupService
     {
         ICustomerGroupRepository _customerGroupRepository;
 
-        public CustomerGroupService(ICustomerGroupRepository customerGroupRepository)
+        public CustomerGroupService(ICustomerGroupRepository customerGroupRepository) : base(customerGroupRepository)
         {
             _customerGroupRepository = customerGroupRepository;
         }
 
-        public int Delete(Guid customerId)
-        {
-            throw new NotImplementedException();
-        }
+        //public int Delete(Guid customerId)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public IEnumerable<CustomerGroup> GetAll()
-        {
-            return _customerGroupRepository.GetAll();
-        }
+        //public IEnumerable<CustomerGroup> GetAll()
+        //{
+        //    return _customerGroupRepository.GetAll();
+        //}
 
-        public CustomerGroup GetById(Guid customerGroupId)
-        {
-            return _customerGroupRepository.GetById(customerGroupId);
-        }
+        //public CustomerGroup GetById(Guid customerGroupId)
+        //{
+        //    return _customerGroupRepository.GetById(customerGroupId);
+        //}
 
-        public int Insert(CustomerGroup customer)
-        {
-            throw new NotImplementedException();
-        }
+        //public int Insert(CustomerGroup customer)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public int Update(CustomerGroup customer)
-        {
-            throw new NotImplementedException();
-        }
+        //public int Update(CustomerGroup customer)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }
