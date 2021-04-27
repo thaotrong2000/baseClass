@@ -9,49 +9,56 @@ using System.Threading.Tasks;
 
 namespace MISA.Core.Service
 {
-    public class CustomerService : ICustomerService
+    public class CustomerService : BaseService<Customer>, ICustomerService
     {
         ICustomerRepository _customerRepository;
-        public int Delete(Guid customerId)
+
+        public CustomerService(ICustomerRepository customerRepository) : base(customerRepository)
         {
-            var rowsAffect = _customerRepository.Delete(customerId);
-            return rowsAffect;
+            _customerRepository = customerRepository;
         }
 
-        public IEnumerable<Customer> GetAll()
-        {
-            var customers = _customerRepository.GetAll();
-            return customers;
-        }
 
-        public Customer GetById(Guid customerId)
-        {
-            var customers = _customerRepository.GetById(customerId);
-            return customers;
-        }
+        //public int Delete(Guid customerId)
+        //{
+        //    var rowsAffect = _customerRepository.Delete(customerId);
+        //    return rowsAffect;
+        //}
 
-        public int Insert(Customer customer)
-        {
+        //public IEnumerable<Customer> GetAll()
+        //{
+        //    var customers = _customerRepository.GetAll();
+        //    return customers;
+        //}
 
-            // Validate dữ liệu 
-            // Check các thông tin bắt buộc nhập
-            if (string.IsNullOrEmpty(customer.CustomerCode))
-            {
-                var response = new
-                {
-                    devMsg = "Mã khách hàng không được để trống",
-                    MISACode = "001"
-                };
-                throw new Exception("Mã khách hàng không được phép để trống!!!");
-            }
-            var rowsAffect = _customerRepository.Insert(customer);
-            return rowsAffect;
-        }
+        //public Customer GetById(Guid customerId)
+        //{
+        //    var customers = _customerRepository.GetById(customerId);
+        //    return customers;
+        //}
 
-        public int Update(Customer customer)
-        {
-            var rowsAffect = _customerRepository.Update(customer);
-            return rowsAffect;
-        }
+        //public int Insert(Customer customer)
+        //{
+
+        //    // Validate dữ liệu 
+        //    // Check các thông tin bắt buộc nhập
+        //    if (string.IsNullOrEmpty(customer.CustomerCode))
+        //    {
+        //        var response = new
+        //        {
+        //            devMsg = "Mã khách hàng không được để trống",
+        //            MISACode = "001"
+        //        };
+        //        throw new Exception("Mã khách hàng không được phép để trống!!!");
+        //    }
+        //    var rowsAffect = _customerRepository.Insert(customer);
+        //    return rowsAffect;
+        //}
+
+        //public int Update(Customer customer)
+        //{
+        //    var rowsAffect = _customerRepository.Update(customer);
+        //    return rowsAffect;
+        //}
     }
 }

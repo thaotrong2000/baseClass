@@ -22,3 +22,15 @@ E:\BaseClassASP.NET\MISA.Core\obj\Debug\net5.0\MISA.Core.csproj.CoreCompileInput
 E:\BaseClassASP.NET\MISA.Core\obj\Debug\net5.0\MISA.Core.dll
 E:\BaseClassASP.NET\MISA.Core\obj\Debug\net5.0\ref\MISA.Core.dll
 E:\BaseClassASP.NET\MISA.Core\obj\Debug\net5.0\MISA.Core.pdb
+E:\baseClass\MISA.Core\bin\Debug\net5.0\MISA.Core.deps.json
+E:\baseClass\MISA.Core\bin\Debug\net5.0\MISA.Core.dll
+E:\baseClass\MISA.Core\bin\Debug\net5.0\ref\MISA.Core.dll
+E:\baseClass\MISA.Core\bin\Debug\net5.0\MISA.Core.pdb
+E:\baseClass\MISA.Core\obj\Debug\net5.0\MISA.Core.csprojAssemblyReference.cache
+E:\baseClass\MISA.Core\obj\Debug\net5.0\MISA.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\baseClass\MISA.Core\obj\Debug\net5.0\MISA.Core.AssemblyInfoInputs.cache
+E:\baseClass\MISA.Core\obj\Debug\net5.0\MISA.Core.AssemblyInfo.cs
+E:\baseClass\MISA.Core\obj\Debug\net5.0\MISA.Core.csproj.CoreCompileInputs.cache
+E:\baseClass\MISA.Core\obj\Debug\net5.0\MISA.Core.dll
+E:\baseClass\MISA.Core\obj\Debug\net5.0\ref\MISA.Core.dll
+E:\baseClass\MISA.Core\obj\Debug\net5.0\MISA.Core.pdb

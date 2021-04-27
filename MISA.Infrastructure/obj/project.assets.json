@@ -99,11 +99,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\BaseClassASP.NET\\MISA.Infrastructure\\MISA.Infrastructure.csproj",
+      "projectUniqueName": "E:\\baseClass\\MISA.Infrastructure\\MISA.Infrastructure.csproj",
       "projectName": "MISA.Infrastructure",
-      "projectPath": "E:\\BaseClassASP.NET\\MISA.Infrastructure\\MISA.Infrastructure.csproj",
+      "projectPath": "E:\\baseClass\\MISA.Infrastructure\\MISA.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\Trong Thao\\.nuget\\packages\\",
-      "outputPath": "E:\\BaseClassASP.NET\\MISA.Infrastructure\\obj\\",
+      "outputPath": "E:\\baseClass\\MISA.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Trong Thao\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -120,8 +120,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "E:\\BaseClassASP.NET\\MISA.Core\\MISA.Core.csproj": {
-              "projectPath": "E:\\BaseClassASP.NET\\MISA.Core\\MISA.Core.csproj"
+            "E:\\baseClass\\MISA.Core\\MISA.Core.csproj": {
+              "projectPath": "E:\\baseClass\\MISA.Core\\MISA.Core.csproj"
             }
           }
         }

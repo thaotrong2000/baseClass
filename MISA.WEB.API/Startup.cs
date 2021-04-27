@@ -41,6 +41,7 @@ namespace MISA.WEB.API
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<ICustomerGroupRepository, CustomerGroupRepository>();
             services.AddScoped<ICustomerGroupService, CustomerGroupService>();
+            services.AddScoped(typeof(IBaseService<>), typeof(BaseRepository<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

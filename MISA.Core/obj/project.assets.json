@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\BaseClassASP.NET\\MISA.Core\\MISA.Core.csproj",
+      "projectUniqueName": "E:\\baseClass\\MISA.Core\\MISA.Core.csproj",
       "projectName": "MISA.Core",
-      "projectPath": "E:\\BaseClassASP.NET\\MISA.Core\\MISA.Core.csproj",
+      "projectPath": "E:\\baseClass\\MISA.Core\\MISA.Core.csproj",
       "packagesPath": "C:\\Users\\Trong Thao\\.nuget\\packages\\",
-      "outputPath": "E:\\BaseClassASP.NET\\MISA.Core\\obj\\",
+      "outputPath": "E:\\baseClass\\MISA.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Trong Thao\\AppData\\Roaming\\NuGet\\NuGet.Config",

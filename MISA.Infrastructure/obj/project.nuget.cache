@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uBKjgLU+kD4f9p3AIZ3JDwp2coqDb/RvGtpajPgYV6iu2L1J5p0lMrMcZH17MYUEEyhyCOy3YhB3lXaD9rPcrw==",
+  "dgSpecHash": "6G3ugQKe6MkKMcm4dJO5v7ntatZ6mAzN1VsgfF4n4pIWQDmHRSvpKHYC4YTrFqJ0Ju+6KZm17z/AGzFpTBF1xQ==",
   "success": true,
-  "projectFilePath": "E:\\BaseClassASP.NET\\MISA.Infrastructure\\MISA.Infrastructure.csproj",
+  "projectFilePath": "E:\\baseClass\\MISA.Infrastructure\\MISA.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Trong Thao\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
     "C:\\Users\\Trong Thao\\.nuget\\packages\\mysqlconnector\\1.3.3\\mysqlconnector.1.3.3.nupkg.sha512"
