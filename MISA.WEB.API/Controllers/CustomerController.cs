@@ -67,28 +67,48 @@ namespace MISA.WEB.API.Controllers
         [HttpPost]
         public IActionResult Post(Customer customer)
         {
-            // Kiểm tra trùng mã 
-            var checkExistCustomerCode = _customerRepository.CheckCustomerCodeExist(customer.CustomerCode);
-            if (checkExistCustomerCode == true)
+            // Kiểm tra mã trống 
+            if (string.IsNullOrEmpty(customer.CustomerCode))
             {
-                var respon = new
+                var res = new
                 {
-                    mesMsg = "Mã khách hàng đã tồn tại hoặc rỗng, bạn hãy nhập mã khác!!!",
-                    MisaCode = "MISA004"
+                    devMsg = "Mã khách hàng không được để trống, vui lòng nhập nó!!!",
+                    MISACode = "MISA004"
                 };
-                return StatusCode(400, respon);
+                return StatusCode(400, res);
             }
             else
             {
-                // Thực hiện thêm dữ liệu
-                var res = _customerRepository.Insert(customer);
-                if (res > 0)
+                // Kiểm tra trùng mã 
+                var checkExistCustomerCode = _customerRepository.CheckCustomerCodeExist(customer.CustomerCode);
+                if (checkExistCustomerCode == true)
                 {
-                    return StatusCode(201, res);
+                    var respon = new
+                    {
+                        devMsg = "Mã khách hàng đã tồn tại, bạn hãy nhập mã khác!!!",
+                        MisaCode = "MISA005"
+                    };
+                    return StatusCode(400, respon);
                 }
                 else
                 {
-                    return NoContent();
+
+
+                    // Thực hiện thêm dữ liệu
+                    var res = _customerRepository.Insert(customer);
+                    if (res > 0)
+                    {
+                        return StatusCode(201, "Thêm dữ liệu thành công");
+                    }
+                    else
+                    {
+                        var respon = new
+                        {
+                            devMes = "Không thêm được dữ liệu",
+                            MISACode = "MISA007"
+                        };
+                        return StatusCode(400, respon);
+                    }
                 }
             }
 
@@ -108,7 +128,11 @@ namespace MISA.WEB.API.Controllers
 
             if (customer == null)
             {
-                return NoContent();
+                var res = new {
+                    devMsg = "CustomerId của bạn nhập không chính xác, hãy thử lại!!!",
+                    MISACode ="MISA004"
+                }; 
+                return StatusCode(400, res);
             }
             else
             {
@@ -133,16 +157,16 @@ namespace MISA.WEB.API.Controllers
             var customers = _customerRepository.Delete(CustomerId);
             if (customers > 0)
             {
-                //var response = new
-                //{
-                //    devMsg = "Xoa du lieu thanh cong",
-                //    statusCode = "204"
-                //};
-                return StatusCode(204, "Xóa dữ liệu thành công");
+                return StatusCode(204);
             }
             else
             {
-                return StatusCode(500, "Không xóa được dữ liệu,vui lòng kiểm tra lại CustomerId bạn vừa nhập !!!");
+                var res = new
+                {
+                    devMsg = "Không xóa được dữ liệu,vui lòng kiểm tra lại CustomerId bạn vừa nhập !!!",
+                    MISACode = "MISA006"
+                };
+                return StatusCode(400, res);
             }
 
         }

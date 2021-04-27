@@ -31,7 +31,7 @@ namespace MISA.Core.Service
         public int Insert(MISAEntity entity)
         {
             // Validate dữ liệu
-            Validate(entity);
+            //Validate(entity);
             return _baseRepository.Insert(entity);
         }
 

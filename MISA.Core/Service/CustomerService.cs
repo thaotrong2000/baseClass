@@ -32,7 +32,7 @@ namespace MISA.Core.Service
                 var isExist = _customerRepository.CheckCustomerCodeExist(customer.CustomerCode);
                 if (isExist == true)
                 {
-                    throw new Exception("Mã khách hàng đã tồn tại trên hệ thống");
+                    throw new Exception("Mã khách hàng đã tồn tại trên hệ thống!.");
                 }
             }
         }
