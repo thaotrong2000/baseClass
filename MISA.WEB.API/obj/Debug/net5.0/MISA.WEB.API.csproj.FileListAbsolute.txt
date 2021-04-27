@@ -103,3 +103,7 @@ E:\baseClass\MISA.WEB.API\obj\Debug\net5.0\MISA.WEB.API.dll
 E:\baseClass\MISA.WEB.API\obj\Debug\net5.0\ref\MISA.WEB.API.dll
 E:\baseClass\MISA.WEB.API\obj\Debug\net5.0\MISA.WEB.API.pdb
 E:\baseClass\MISA.WEB.API\obj\Debug\net5.0\MISA.WEB.API.genruntimeconfig.cache
+E:\baseClass\MISA.WEB.API\bin\Debug\net5.0\Newtonsoft.Json.dll
+E:\baseClass\MISA.WEB.API\bin\Debug\net5.0\SendGrid.dll
+E:\baseClass\MISA.WEB.API\bin\Debug\net5.0\ServiceStack.Text.dll
+E:\baseClass\MISA.WEB.API\bin\Debug\net5.0\StarkbankEcdsa.dll

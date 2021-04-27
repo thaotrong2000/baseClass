@@ -128,10 +128,11 @@ namespace MISA.WEB.API.Controllers
 
             if (customer == null)
             {
-                var res = new {
+                var res = new
+                {
                     devMsg = "CustomerId của bạn nhập không chính xác, hãy thử lại!!!",
-                    MISACode ="MISA004"
-                }; 
+                    MISACode = "MISA004"
+                };
                 return StatusCode(400, res);
             }
             else
@@ -154,6 +155,7 @@ namespace MISA.WEB.API.Controllers
         [HttpDelete("{CustomerId}")]
         public IActionResult DeleteById(Guid CustomerId)
         {
+
             var customers = _customerRepository.Delete(CustomerId);
             if (customers > 0)
             {
@@ -168,6 +170,7 @@ namespace MISA.WEB.API.Controllers
                 };
                 return StatusCode(400, res);
             }
+
 
         }
 
