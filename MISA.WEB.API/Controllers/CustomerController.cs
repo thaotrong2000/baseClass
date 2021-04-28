@@ -40,6 +40,8 @@ namespace MISA.WEB.API.Controllers
         [HttpGet()]
         public IActionResult Get()
         {
+
+
             var customers = _customerRepository.GetAll();
 
             if (customers.Count() > 0)
@@ -67,50 +69,61 @@ namespace MISA.WEB.API.Controllers
         [HttpPost]
         public IActionResult Post(Customer customer)
         {
-            // Kiểm tra mã trống 
-            if (string.IsNullOrEmpty(customer.CustomerCode))
+            //// Kiểm tra mã trống 
+            //if (string.IsNullOrEmpty(customer.CustomerCode))
+            //{
+            //    var res = new
+            //    {
+            //        devMsg = "Mã khách hàng không được để trống, vui lòng nhập nó!!!",
+            //        MISACode = "MISA004"
+            //    };
+            //    return StatusCode(400, res);
+            //}
+            //else
+            //{
+            //    // Kiểm tra trùng mã 
+            //    var checkExistCustomerCode = _customerRepository.CheckCustomerCodeExist(customer.CustomerCode);
+            //    if (checkExistCustomerCode == true)
+            //    {
+            //        var respon = new
+            //        {
+            //            devMsg = "Mã khách hàng đã tồn tại, bạn hãy nhập mã khác!!!",
+            //            MisaCode = "MISA005"
+            //        };
+            //        return StatusCode(400, respon);
+            //    }
+            //    else
+            //    {
+
+
+            //        // Thực hiện thêm dữ liệu
+            //        var res = _customerRepository.Insert(customer);
+            //        if (res > 0)
+            //        {
+            //            return StatusCode(201, "Thêm dữ liệu thành công");
+            //        }
+            //        else
+            //        {
+            //            var respon = new
+            //            {
+            //                devMes = "Không thêm được dữ liệu",
+            //                MISACode = "MISA007"
+            //            };
+            //            return StatusCode(400, respon);
+            //        }
+            //    }
+            //}
+
+            var customers = _customerService.Insert(customer);
+            if (customers > 0)
             {
-                var res = new
-                {
-                    devMsg = "Mã khách hàng không được để trống, vui lòng nhập nó!!!",
-                    MISACode = "MISA004"
-                };
-                return StatusCode(400, res);
+                return Ok("Bạn đã thêm dữ liệu thành công");
             }
             else
             {
-                // Kiểm tra trùng mã 
-                var checkExistCustomerCode = _customerRepository.CheckCustomerCodeExist(customer.CustomerCode);
-                if (checkExistCustomerCode == true)
-                {
-                    var respon = new
-                    {
-                        devMsg = "Mã khách hàng đã tồn tại, bạn hãy nhập mã khác!!!",
-                        MisaCode = "MISA005"
-                    };
-                    return StatusCode(400, respon);
-                }
-                else
-                {
-
-
-                    // Thực hiện thêm dữ liệu
-                    var res = _customerRepository.Insert(customer);
-                    if (res > 0)
-                    {
-                        return StatusCode(201, "Thêm dữ liệu thành công");
-                    }
-                    else
-                    {
-                        var respon = new
-                        {
-                            devMes = "Không thêm được dữ liệu",
-                            MISACode = "MISA007"
-                        };
-                        return StatusCode(400, respon);
-                    }
-                }
+                return NoContent();
             }
+
 
 
 

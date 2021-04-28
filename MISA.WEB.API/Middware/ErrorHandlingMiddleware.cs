@@ -31,14 +31,19 @@ namespace MISA.WEB.API.Middware
 
         private static Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
-            HttpStatusCode status;
             string message;
+            var respon = new
+            {
+                devMsg = exception.Message,
+                userMsg = "Có lỗi xảy ra, vui lòng liên hệ MISA",
+                MISACode = "MISA002",
+                Data = exception.Data
+            };
+
             var stackTrace = String.Empty;
             message = exception.Message;
-            var exceptionType = exception.GetType();
 
-
-            var result = JsonSerializer.Serialize(new { error = message, stackTrace });
+            var result = JsonSerializer.Serialize(respon);
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = 500;
             return context.Response.WriteAsync(result);

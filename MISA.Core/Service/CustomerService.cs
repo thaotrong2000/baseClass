@@ -20,9 +20,19 @@ namespace MISA.Core.Service
 
         protected override void Validate(Customer entity)
         {
+            // Check dữ liệu có trống hay không
+            var customer = entity as Customer;
+            if (string.IsNullOrEmpty(customer.CustomerCode))
+            {
+                throw new Exception("Bạn không được để trống mã khách hàng, hãy nhập nó");
+            }
+
+
+
+            // Check dữ liệu đã tồn tại hay chưa
             if (entity is Customer)
             {
-                var customer = entity as Customer;
+
 
                 //Validate dữ liệu
                 // Check các thông tin bắt buộc nhập
@@ -35,6 +45,8 @@ namespace MISA.Core.Service
                     throw new Exception("Mã khách hàng đã tồn tại trên hệ thống!.");
                 }
             }
+
+
         }
 
 
