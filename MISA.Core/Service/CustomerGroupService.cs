@@ -18,29 +18,5 @@ namespace MISA.Core.Service
             _customerGroupRepository = customerGroupRepository;
         }
 
-        //public int Delete(Guid customerId)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public IEnumerable<CustomerGroup> GetAll()
-        //{
-        //    return _customerGroupRepository.GetAll();
-        //}
-
-        //public CustomerGroup GetById(Guid customerGroupId)
-        //{
-        //    return _customerGroupRepository.GetById(customerGroupId);
-        //}
-
-        //public int Insert(CustomerGroup customer)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public int Update(CustomerGroup customer)
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }
