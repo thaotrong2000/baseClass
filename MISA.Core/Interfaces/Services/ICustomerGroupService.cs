@@ -7,12 +7,8 @@ using System.Threading.Tasks;
 
 namespace MISA.Core.Interfaces.Services
 {
-    public interface ICustomerGroupService
+    public interface ICustomerGroupService : IBaseService<CustomerGroup>
     {
-        public IEnumerable<CustomerGroup> GetAll();
-        public CustomerGroup GetById(Guid customerId);
-        public int Insert(CustomerGroup customer);
-        public int Update(CustomerGroup customer);
-        public int Delete(Guid customerId);
+
     }
 }
