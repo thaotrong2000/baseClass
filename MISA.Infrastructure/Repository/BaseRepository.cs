@@ -4,15 +4,11 @@ using MySqlConnector;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MISA.Infrastructure.Repository
 {
     public class BaseRepository<MISAEntity> : IBaseRepository<MISAEntity>
     {
-        string tableName = typeof(MISAEntity).Name;
         protected string connectString = "Host = 47.241.69.179;" +
                 "Port = 3306;" +
                 "Database = MF0_NVManh_CukCuk02;" +
@@ -20,7 +16,9 @@ namespace MISA.Infrastructure.Repository
                 "Password = 12345678;" +
                 "AllowZeroDateTime=True"
                 ;
+
         protected IDbConnection dbConnection;
+        private string tableName = typeof(MISAEntity).Name;
 
         public int Delete(Guid entityId)
         {
@@ -42,7 +40,6 @@ namespace MISA.Infrastructure.Repository
                 var customerGroups = dbConnection.Query<MISAEntity>($"Proc_Get{tableName}s", commandType: CommandType.StoredProcedure);
                 return customerGroups;
             }
-
         }
 
         public MISAEntity GetById(Guid entityId)
@@ -71,7 +68,7 @@ namespace MISA.Infrastructure.Repository
         {
             using (dbConnection = new MySqlConnection(connectString))
             {
-                // Update data 
+                // Update data
 
                 var updateCustomer = dbConnection.Execute($"Proc_Update{tableName}", param: entity,
                     commandType: CommandType.StoredProcedure);

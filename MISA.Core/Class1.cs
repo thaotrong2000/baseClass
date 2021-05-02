@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MISA.Core
+﻿namespace MISA.Core
 {
     public class Class1
     {

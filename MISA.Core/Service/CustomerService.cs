@@ -1,18 +1,13 @@
 ﻿using MISA.Core.Entities;
-using MISA.Core.Exceptions;
 using MISA.Core.Interfaces.Repository;
 using MISA.Core.Interfaces.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MISA.Core.Service
 {
     public class CustomerService : BaseService<Customer>, ICustomerService
     {
-        ICustomerRepository _customerRepository;
+        private ICustomerRepository _customerRepository;
 
         public CustomerService(ICustomerRepository customerRepository) : base(customerRepository)
         {
@@ -34,7 +29,7 @@ namespace MISA.Core.Service
                 // Validate dữ liệu
                 // CustomerExeption.CheckCustomerCodeEmpty(customer.CustomerCode)
 
-                // Check trùng mã  
+                // Check trùng mã
                 var isExist = _customerRepository.CheckCustomerCodeExist(customer.CustomerCode);
                 if (isExist == true)
                 {
@@ -43,5 +38,4 @@ namespace MISA.Core.Service
             }
         }
     }
-
 }

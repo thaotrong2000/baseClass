@@ -1,16 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Dapper;
-using MySqlConnector;
-using System.Data;
-using MISA.Core.Interfaces.Services;
-using MISA.Core.Interfaces.Repository;
+﻿using Microsoft.AspNetCore.Mvc;
 using MISA.Core.Entities;
-using MISA.Core.Service;
+using MISA.Core.Interfaces.Repository;
+using MISA.Core.Interfaces.Services;
+using System;
+using System.Linq;
 
 namespace MISA.WEB.API.Controllers
 {
@@ -18,8 +11,8 @@ namespace MISA.WEB.API.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-        ICustomerService _customerService;
-        ICustomerRepository _customerRepository;
+        private ICustomerService _customerService;
+        private ICustomerRepository _customerRepository;
 
         public CustomerController(ICustomerService customerService, ICustomerRepository customerRepository)
         {
@@ -27,14 +20,13 @@ namespace MISA.WEB.API.Controllers
             _customerRepository = customerRepository;
         }
 
-
         /// <summary>
         /// Thông tin toàn bộ khách hàng
         /// </summary>
         /// <returns>
-        /// StatusCode: 
-        /// 200: Lấy thông tin thành công 
-        /// 204: Không lấy được thông tin gì 
+        /// StatusCode:
+        /// 200: Lấy thông tin thành công
+        /// 204: Không lấy được thông tin gì
         /// </returns>
         /// CreatedBy:NTThao(19/04/2021)
         [HttpGet()]
@@ -54,13 +46,12 @@ namespace MISA.WEB.API.Controllers
             }
         }
 
-
         /// <summary>
         /// Thêm một khách hàng mới
         /// </summary>
         /// <param name="customer"></param>
         /// <returns>
-        /// StatusCode: 
+        /// StatusCode:
         /// 201: Created - thêm thành công
         /// 204: Không thêm thành công
         /// </returns>
@@ -104,21 +95,18 @@ namespace MISA.WEB.API.Controllers
             }
         }
 
-
-
         /// <summary>
         /// Xóa một khách hàng theo CustomerId
         /// </summary>
         /// <param name="CustomerId"></param>
         /// <returns>
-        /// StatusCode: 
-        /// 204 - Xóa thành công 
+        /// StatusCode:
+        /// 204 - Xóa thành công
         /// 500 - Xóa không thành công
         /// </returns>
         [HttpDelete("{CustomerId}")]
         public IActionResult DeleteById(Guid CustomerId)
         {
-
             var customers = _customerRepository.Delete(CustomerId);
             if (customers > 0)
             {
@@ -133,8 +121,6 @@ namespace MISA.WEB.API.Controllers
                 };
                 return StatusCode(400, res);
             }
-
-
         }
 
         /// <summary>
@@ -156,14 +142,5 @@ namespace MISA.WEB.API.Controllers
                 return StatusCode(400, "Khong cap nhat duoc");
             }
         }
-
     }
-
-
-
-
-
-
-
-
 }

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MISA.Infrastructure
+﻿namespace MISA.Infrastructure
 {
     public class Class1
     {
