@@ -1,9 +1,12 @@
-﻿using System;
+﻿using MISA.Core.Interfaces.Repository;
+using System;
 
 namespace MISA.Core.Exceptions
 {
     public class CustomerException : Exception
     {
+        private ICustomerRepository _customerRepository;
+
         public CustomerException(string message) : base(message)
         {
         }

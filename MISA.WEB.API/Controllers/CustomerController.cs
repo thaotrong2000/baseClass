@@ -75,6 +75,7 @@ namespace MISA.WEB.API.Controllers
         /// </summary>
         /// <param name="customerId"></param>
         /// <returns></returns>
+        /// CreatedBy: NTTHAO(3/5/2021)
         [HttpGet("{customerId}")]
         public IActionResult getCustomerById(Guid customerId)
         {
@@ -104,6 +105,7 @@ namespace MISA.WEB.API.Controllers
         /// 204 - Xóa thành công
         /// 500 - Xóa không thành công
         /// </returns>
+        /// CreatedBy: NTTHAO(3/5/2021)
         [HttpDelete("{CustomerId}")]
         public IActionResult DeleteById(Guid CustomerId)
         {
@@ -129,6 +131,7 @@ namespace MISA.WEB.API.Controllers
         /// <param name="CustomerCode"></param>
         /// <param name="customer"></param>
         /// <returns></returns>
+        /// CreatedBy: NTTHAO(3/5/2021)
         [HttpPut]
         public IActionResult Put(Customer customer)
         {
