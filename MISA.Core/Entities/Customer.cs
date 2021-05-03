@@ -1,12 +1,19 @@
-﻿using System;
+﻿using MISA.Core.AttributeCustom;
+using System;
 
 namespace MISA.Core.Entities
 {
     public class Customer
     {
         public Guid? CustomerId { get; set; }
+
+        [MISARequired("Mã khách hàng không được phép để trống")]
+        [MISAMaxLength(20, msg: "Mã khách hàng không được phép quá 20 ký tự")]
         public string CustomerCode { get; set; }
+
+        [MISARequired]
         public string FullName { get; set; }
+
         public int Gender { get; set; }
         public string MemberCardCode { get; set; }
         public Guid CustomerGroupId { get; set; }

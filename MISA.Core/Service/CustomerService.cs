@@ -1,4 +1,5 @@
-﻿using MISA.Core.Entities;
+﻿using MISA.Core.AttributeCustom;
+using MISA.Core.Entities;
 using MISA.Core.Exceptions;
 using MISA.Core.Interfaces.Repository;
 using MISA.Core.Interfaces.Services;
@@ -20,7 +21,7 @@ namespace MISA.Core.Service
         /// </summary>
         /// <param name="entity"></param>
         /// CreatedBy: NTTHAO(3/5/2021)
-        protected override void Validate(Customer entity)
+        protected override void CustomValidate(Customer entity)
         {
             //if (string.IsNullOrEmpty(customer.CustomerCode))
             //{
@@ -31,7 +32,7 @@ namespace MISA.Core.Service
             // Kiểm tra dữ liệu đã tồn tại hay chưa?
             if (entity != null)
             {
-                CustomerException.CheckNullCustomerCode(entity.CustomerCode);
+                //CustomerException.CheckNullCustomerCode(entity.CustomerCode);
                 // Validate dữ liệu
                 // CustomerExeption.CheckCustomerCodeExist(customer.CustomerCode)
 

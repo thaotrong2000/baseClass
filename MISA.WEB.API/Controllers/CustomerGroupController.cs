@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MISA.Core.Entities;
 using MISA.Core.Interfaces.Repository;
 using MISA.Core.Interfaces.Services;
 using System;
@@ -44,6 +45,20 @@ namespace MISA.WEB.API.Controllers
             else
             {
                 return Ok(customerGroup);
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Post(CustomerGroup customerGroup)
+        {
+            var customersGroup = _customerGroupService.Insert(customerGroup);
+            if (customersGroup > 0)
+            {
+                return Ok("Bạn đã thêm dữ liệu thành công");
+            }
+            else
+            {
+                return NoContent();
             }
         }
     }
