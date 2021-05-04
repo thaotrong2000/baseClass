@@ -4,6 +4,8 @@ using MISA.Core.Exceptions;
 using MISA.Core.Interfaces.Repository;
 using MISA.Core.Interfaces.Services;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace MISA.Core.Service
 {
@@ -43,6 +45,29 @@ namespace MISA.Core.Service
                     throw new Exception("Mã khách hàng đã tồn tại trên hệ thống!.");
                 }
             }
+        }
+
+        /// <summary>
+        /// Lọc dữ liệu theo FullName hoặc theo PhoneNumber
+        /// </summary>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="fullName"></param>
+        /// <param name="phoneNumber"></param>
+        /// <returns></returns>
+        /// CreatedBy: NTTHAO(4/5/2021)
+        public IEnumerable<Customer> FilterCustomer(int pageIndex, int pageSize, string fullName, string phoneNumber)
+        {
+            if (pageIndex < 0 || pageSize < 0)
+            {
+                throw new Exception("Dữ liệu bạn nhập vào không đúng, hãy nhập lại");
+            }
+
+            var filterCustomer = _customerRepository.CustomerFilter(pageIndex, pageSize, fullName, phoneNumber);
+
+            // validate dữ liệu được thêm vào để lọc
+
+            return filterCustomer;
         }
     }
 }

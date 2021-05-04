@@ -145,5 +145,19 @@ namespace MISA.WEB.API.Controllers
                 return StatusCode(400, "Khong cap nhat duoc");
             }
         }
+
+        [HttpGet("Filter")]
+        public IActionResult CustomerFilter(int pageIndex, int pageSize, string fullName, string phoneNumber)
+        {
+            var customerFilter = _customerService.FilterCustomer(pageIndex, pageSize, fullName, phoneNumber);
+            if (customerFilter.Count() > 0)
+            {
+                return Ok(customerFilter);
+            }
+            else
+            {
+                return NoContent();
+            }
+        }
     }
 }
