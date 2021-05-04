@@ -10,7 +10,7 @@ namespace MISA.Core.Entities
         [MISARequired("Mã khách hàng không được phép để trống")]
         [MISAMaxLength(20, msg: "Mã khách hàng không được phép quá 20 ký tự")]
         public string CustomerCode { get; set; }
-
+        
         [MISARequired]
         public string FullName { get; set; }
 

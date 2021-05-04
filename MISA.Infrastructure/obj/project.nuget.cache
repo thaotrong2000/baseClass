@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "6G3ugQKe6MkKMcm4dJO5v7ntatZ6mAzN1VsgfF4n4pIWQDmHRSvpKHYC4YTrFqJ0Ju+6KZm17z/AGzFpTBF1xQ==",
+  "dgSpecHash": "5qmM4ogSzl5ezVull+99Ztgbz0mv8WaKbIfvgm3nWXXWN09OG8w6IPErLHuEspQs15C/esnjFU7c0xbBuPZ2ZA==",
   "success": true,
-  "projectFilePath": "E:\\baseClass\\MISA.Infrastructure\\MISA.Infrastructure.csproj",
+  "projectFilePath": "D:\\MF817_NguyenTrongThao\\baseClass\\MISA.Infrastructure\\MISA.Infrastructure.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Trong Thao\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
-    "C:\\Users\\Trong Thao\\.nuget\\packages\\mysqlconnector\\1.3.3\\mysqlconnector.1.3.3.nupkg.sha512"
+    "C:\\Users\\ntthao1\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
+    "C:\\Users\\ntthao1\\.nuget\\packages\\mysqlconnector\\1.3.3\\mysqlconnector.1.3.3.nupkg.sha512"
   ],
   "logs": []
 }

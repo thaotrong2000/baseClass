@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace MISA.WEB.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class CustomerController : ControllerBase
     {
@@ -143,6 +143,20 @@ namespace MISA.WEB.API.Controllers
             else
             {
                 return StatusCode(400, "Khong cap nhat duoc");
+            }
+        }
+
+        [HttpGet("Filter")]
+        public IActionResult CustomerFilter(int pageIndex, int pageSize, string fullName, string phoneNumber)
+        {
+            var customerFilter = _customerService.FilterCustomer(pageIndex, pageSize, fullName, phoneNumber);
+            if (customerFilter.Count() > 0)
+            {
+                return Ok(customerFilter);
+            }
+            else
+            {
+                return NoContent();
             }
         }
     }
