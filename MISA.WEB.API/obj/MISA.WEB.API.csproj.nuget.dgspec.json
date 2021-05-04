@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\baseClass\\MISA.WEB.API\\MISA.WEB.API.csproj": {}
+    "D:\\MF817_NguyenTrongThao\\baseClass\\MISA.WEB.API\\MISA.WEB.API.csproj": {}
   },
   "projects": {
-    "E:\\baseClass\\MISA.Core\\MISA.Core.csproj": {
+    "D:\\MF817_NguyenTrongThao\\baseClass\\MISA.Core\\MISA.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\baseClass\\MISA.Core\\MISA.Core.csproj",
+        "projectUniqueName": "D:\\MF817_NguyenTrongThao\\baseClass\\MISA.Core\\MISA.Core.csproj",
         "projectName": "MISA.Core",
-        "projectPath": "E:\\baseClass\\MISA.Core\\MISA.Core.csproj",
-        "packagesPath": "C:\\Users\\Trong Thao\\.nuget\\packages\\",
-        "outputPath": "E:\\baseClass\\MISA.Core\\obj\\",
+        "projectPath": "D:\\MF817_NguyenTrongThao\\baseClass\\MISA.Core\\MISA.Core.csproj",
+        "packagesPath": "C:\\Users\\ntthao1\\.nuget\\packages\\",
+        "outputPath": "D:\\MF817_NguyenTrongThao\\baseClass\\MISA.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Trong Thao\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ntthao1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -54,21 +54,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\baseClass\\MISA.Infrastructure\\MISA.Infrastructure.csproj": {
+    "D:\\MF817_NguyenTrongThao\\baseClass\\MISA.Infrastructure\\MISA.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\baseClass\\MISA.Infrastructure\\MISA.Infrastructure.csproj",
+        "projectUniqueName": "D:\\MF817_NguyenTrongThao\\baseClass\\MISA.Infrastructure\\MISA.Infrastructure.csproj",
         "projectName": "MISA.Infrastructure",
-        "projectPath": "E:\\baseClass\\MISA.Infrastructure\\MISA.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Trong Thao\\.nuget\\packages\\",
-        "outputPath": "E:\\baseClass\\MISA.Infrastructure\\obj\\",
+        "projectPath": "D:\\MF817_NguyenTrongThao\\baseClass\\MISA.Infrastructure\\MISA.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\ntthao1\\.nuget\\packages\\",
+        "outputPath": "D:\\MF817_NguyenTrongThao\\baseClass\\MISA.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Trong Thao\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ntthao1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -82,8 +82,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "E:\\baseClass\\MISA.Core\\MISA.Core.csproj": {
-                "projectPath": "E:\\baseClass\\MISA.Core\\MISA.Core.csproj"
+              "D:\\MF817_NguyenTrongThao\\baseClass\\MISA.Core\\MISA.Core.csproj": {
+                "projectPath": "D:\\MF817_NguyenTrongThao\\baseClass\\MISA.Core\\MISA.Core.csproj"
               }
             }
           }
@@ -122,21 +122,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\baseClass\\MISA.WEB.API\\MISA.WEB.API.csproj": {
+    "D:\\MF817_NguyenTrongThao\\baseClass\\MISA.WEB.API\\MISA.WEB.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\baseClass\\MISA.WEB.API\\MISA.WEB.API.csproj",
+        "projectUniqueName": "D:\\MF817_NguyenTrongThao\\baseClass\\MISA.WEB.API\\MISA.WEB.API.csproj",
         "projectName": "MISA.WEB.API",
-        "projectPath": "E:\\baseClass\\MISA.WEB.API\\MISA.WEB.API.csproj",
-        "packagesPath": "C:\\Users\\Trong Thao\\.nuget\\packages\\",
-        "outputPath": "E:\\baseClass\\MISA.WEB.API\\obj\\",
+        "projectPath": "D:\\MF817_NguyenTrongThao\\baseClass\\MISA.WEB.API\\MISA.WEB.API.csproj",
+        "packagesPath": "C:\\Users\\ntthao1\\.nuget\\packages\\",
+        "outputPath": "D:\\MF817_NguyenTrongThao\\baseClass\\MISA.WEB.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Trong Thao\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ntthao1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -150,11 +150,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "E:\\baseClass\\MISA.Core\\MISA.Core.csproj": {
-                "projectPath": "E:\\baseClass\\MISA.Core\\MISA.Core.csproj"
+              "D:\\MF817_NguyenTrongThao\\baseClass\\MISA.Core\\MISA.Core.csproj": {
+                "projectPath": "D:\\MF817_NguyenTrongThao\\baseClass\\MISA.Core\\MISA.Core.csproj"
               },
-              "E:\\baseClass\\MISA.Infrastructure\\MISA.Infrastructure.csproj": {
-                "projectPath": "E:\\baseClass\\MISA.Infrastructure\\MISA.Infrastructure.csproj"
+              "D:\\MF817_NguyenTrongThao\\baseClass\\MISA.Infrastructure\\MISA.Infrastructure.csproj": {
+                "projectPath": "D:\\MF817_NguyenTrongThao\\baseClass\\MISA.Infrastructure\\MISA.Infrastructure.csproj"
               }
             }
           }
@@ -208,7 +208,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
