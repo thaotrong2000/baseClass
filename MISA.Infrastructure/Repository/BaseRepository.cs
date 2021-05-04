@@ -7,6 +7,12 @@ using System.Data;
 
 namespace MISA.Infrastructure.Repository
 {
+    /// <summary>
+    /// Tạo xử lý với cơ sở dữ liệu
+    /// Trong Base là các thành phần dùng chung của Repository
+    /// </summary>
+    /// <typeparam name="MISAEntity"></typeparam>
+    /// CreatedBy: NTTHAO(5/5/2021)
     public class BaseRepository<MISAEntity> : IBaseRepository<MISAEntity>
     {
         protected string connectString = "Host = 47.241.69.179;" +
@@ -20,6 +26,14 @@ namespace MISA.Infrastructure.Repository
         protected IDbConnection dbConnection;
         private string tableName = typeof(MISAEntity).Name;
 
+        /// <summary>
+        /// Xóa một người dùng bằng mã định danh
+        /// </summary>
+        /// <param name="entityId"></param>
+        /// <returns>
+        /// Trả về trạng thái: có bao nhiêu giá trị đã bị chịu tác động
+        /// </returns>
+        /// /// CreatedBy: NTTHAO(5/5/2021)
         public int Delete(Guid entityId)
         {
             using (dbConnection = new MySqlConnection(connectString))
@@ -32,6 +46,13 @@ namespace MISA.Infrastructure.Repository
             }
         }
 
+        /// <summary>
+        /// Nhận toàn bộ danh sách khách hàng
+        /// </summary>
+        /// <returns>
+        /// IEnumerable<MISAEntity>
+        /// </returns>
+        /// CreatedBy: NTTHAO(5/5/2021)
         public IEnumerable<MISAEntity> GetAll()
         {
             using (dbConnection = new MySqlConnection(connectString))
@@ -42,6 +63,12 @@ namespace MISA.Infrastructure.Repository
             }
         }
 
+        /// <summary>
+        /// Tìm kiếm khách hàng bằng CustomerId
+        /// </summary>
+        /// <param name="entityId"></param>
+        /// <returns></returns>
+        /// /// CreatedBy: NTTHAO(5/5/2021)
         public MISAEntity GetById(Guid entityId)
         {
             using (dbConnection = new MySqlConnection(connectString))
@@ -54,6 +81,14 @@ namespace MISA.Infrastructure.Repository
             }
         }
 
+        /// <summary>
+        /// Thêm mới dữ liệu
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns>
+        /// Trả về xem có bao nhiêu dữ liệu chịu tác động
+        /// </returns>
+        /// CreatedBy: NTTHAO(5/5/2021)
         public int Insert(MISAEntity entity)
         {
             using (dbConnection = new MySqlConnection(connectString))
@@ -64,6 +99,14 @@ namespace MISA.Infrastructure.Repository
             }
         }
 
+        /// <summary>
+        /// Update dữ liệu người dùng
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns>
+        /// Bao nhiêu dữ liệu đã bị chịu tác động
+        /// </returns>
+        /// CreatedBy: NTTHAO(5/5/2021)
         public int Update(MISAEntity entity)
         {
             using (dbConnection = new MySqlConnection(connectString))

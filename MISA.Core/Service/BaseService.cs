@@ -7,8 +7,18 @@ using System.Collections.Generic;
 
 namespace MISA.Core.Service
 {
+    /// <summary>
+    /// Base xử lý nghiệp vụ chung
+    /// </summary>
+    /// <typeparam name="MISAEntity"></typeparam>
+    /// CreatedBy: NTTHAO(5/5/2021)
     public class BaseService<MISAEntity> : IBaseService<MISAEntity>
     {
+        /// <summary>
+        /// Tạo đối tượng Interface là: IBaseRepository để có thể dụng các thuộc tính của CustomerRepository
+        /// Đã được cấu hình trong Startup.cs
+        /// Tạo ra đối tượng _baseRepository để xử lý các thao tác database, vì BaseCustomer chỉ có tác dụng xử lý nghiệp vụ
+        /// </summary>
         private IBaseRepository<MISAEntity> _baseRepository;
 
         public BaseService(IBaseRepository<MISAEntity> baseRepository)

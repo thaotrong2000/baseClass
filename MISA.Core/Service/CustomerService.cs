@@ -58,16 +58,31 @@ namespace MISA.Core.Service
         /// CreatedBy: NTTHAO(4/5/2021)
         public IEnumerable<Customer> FilterCustomer(int pageIndex, int pageSize, string fullName, string phoneNumber)
         {
+            // Số thứ tự trang và số phần tử trên trang phải lớn hơn 0
+            // int PageIndex, int PageSize
             if (pageIndex < 0 || pageSize < 0)
             {
-                throw new Exception("Dữ liệu bạn nhập vào không đúng, hãy nhập lại");
+                throw new CustomerException("Dữ liệu bạn nhập vào không đúng, hãy nhập lại");
+            }
+            // Số thứ tự trang và số phần tử trang phải là số tự nhiên(int)
+            if (pageIndex.GetType() == typeof(int) || pageSize.GetType() == typeof(int))
+            {
+                if (string.IsNullOrEmpty(fullName))
+                {
+                    fullName = "";
+                }
+                if (string.IsNullOrEmpty(phoneNumber))
+                {
+                    phoneNumber = "";
+                }
+                var filterCustomer = _customerRepository.CustomerFilter(pageIndex, pageSize, fullName, phoneNumber);
+
+                // validate dữ liệu được thêm vào để lọc
+
+                return filterCustomer;
             }
 
-            var filterCustomer = _customerRepository.CustomerFilter(pageIndex, pageSize, fullName, phoneNumber);
-
-            // validate dữ liệu được thêm vào để lọc
-
-            return filterCustomer;
+            throw new CustomerException("Bạn phải nhập PageIndex và PageSize là số tự nhiên");
         }
     }
 }
