@@ -9,6 +9,11 @@ using System.Collections.Generic;
 
 namespace MISA.Core.Service
 {
+    /// <summary>
+    /// Xử lý nghiệp vụ riêng cho riêng Customer
+    /// Class này kế thừa những nghiệp vụ chung từ BaseService
+    /// Class này custom thêm các nghiệp vụ riêng cần thiết
+    /// </summary>
     public class CustomerService : BaseService<Customer>, ICustomerService
     {
         private ICustomerRepository _customerRepository;
@@ -25,19 +30,9 @@ namespace MISA.Core.Service
         /// CreatedBy: NTTHAO(3/5/2021)
         protected override void CustomValidate(Customer entity)
         {
-            //if (string.IsNullOrEmpty(customer.CustomerCode))
-            //{
-            //    throw new Exception("Bạn không được để trống mã khách hàng, hãy nhập nó");
-            //}
-            // Kiểm tra dữ liệu trống
-
             // Kiểm tra dữ liệu đã tồn tại hay chưa?
             if (entity != null)
             {
-                //CustomerException.CheckNullCustomerCode(entity.CustomerCode);
-                // Validate dữ liệu
-                // CustomerExeption.CheckCustomerCodeExist(customer.CustomerCode)
-
                 // Check trùng mã
                 var isExist = _customerRepository.CheckCustomerCodeExist(entity.CustomerCode);
                 if (isExist == true)
@@ -60,29 +55,25 @@ namespace MISA.Core.Service
         {
             // Số thứ tự trang và số phần tử trên trang phải lớn hơn 0
             // int PageIndex, int PageSize
-            if (pageIndex < 0 || pageSize < 0)
+            if (pageIndex <= 0 || pageSize <= 0)
             {
                 throw new CustomerException("Dữ liệu bạn nhập vào không đúng, hãy nhập lại");
             }
-            // Số thứ tự trang và số phần tử trang phải là số tự nhiên(int)
-            if (pageIndex.GetType() == typeof(int) || pageSize.GetType() == typeof(int))
+
+            /// Nếu không nhập FullName và PhoneNumber thì nó sẽ tự nhận là chuỗi rỗng ( Empty )
+            if (string.IsNullOrEmpty(fullName))
             {
-                if (string.IsNullOrEmpty(fullName))
-                {
-                    fullName = "";
-                }
-                if (string.IsNullOrEmpty(phoneNumber))
-                {
-                    phoneNumber = "";
-                }
-                var filterCustomer = _customerRepository.CustomerFilter(pageIndex, pageSize, fullName, phoneNumber);
-
-                // validate dữ liệu được thêm vào để lọc
-
-                return filterCustomer;
+                fullName = string.Empty;
             }
+            if (string.IsNullOrEmpty(phoneNumber))
+            {
+                phoneNumber = string.Empty;
+            }
+            var filterCustomer = _customerRepository.CustomerFilter(pageIndex, pageSize, fullName, phoneNumber);
 
-            throw new CustomerException("Bạn phải nhập PageIndex và PageSize là số tự nhiên");
+            // validate dữ liệu được thêm vào để lọc
+
+            return filterCustomer;
         }
     }
 }
